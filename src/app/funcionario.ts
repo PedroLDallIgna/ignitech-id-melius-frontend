@@ -5,7 +5,7 @@ export interface Funcionario {
   CPF: string;
   Equipe: string | null;
   DataNascimento: string;
-  Sexo: 'S' | 'M';
+  Sexo: 'F' | 'M';
   Telefone: string | null;
   Endereco: string | null;
   Email: string;

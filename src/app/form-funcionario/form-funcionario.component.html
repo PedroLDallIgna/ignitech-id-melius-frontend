@@ -1,0 +1,71 @@
+<section class="form__section">
+  <form
+    class="form"
+    [formGroup]="createFuncionarioForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <label class="form__label">
+      <span>Nome</span>
+      <input class="form__input" type="text" formControlName="Nome" />
+    </label>
+    <label class="form__label">
+      <span>Email</span>
+      <input class="form__input" type="email" formControlName="Email" />
+    </label>
+    <label class="form__label">
+      <span>CPF</span>
+      <input
+        class="form__input"
+        type="text"
+        inputmode="numeric"
+        formControlName="CPF"
+      />
+    </label>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Data de Nascimento</span>
+        <input
+          class="form__input"
+          type="date"
+          formControlName="DataNascimento"
+        />
+      </label>
+      <label class="form__label">
+        <span>Sexo</span>
+        <select class="form__select" formControlName="Sexo">
+          <option value="F">Feminino</option>
+          <option value="M">Masculino</option>
+        </select>
+      </label>
+    </div>
+    <label class="form__label">
+      <span>Endereco</span>
+      <input class="form__input" type="text" formControlName="Endereco" />
+    </label>
+    <label class="form__label">
+      <span>Telefone</span>
+      <input
+        class="form__input"
+        type="tel"
+        inputmode="numeric"
+        formControlName="Telefone"
+      />
+    </label>
+    <label class="form__label">
+      <span>Equipe</span>
+      <input
+        class="form__input"
+        type="text"
+        list="squads"
+        autocomplete="off"
+        formControlName="Equipe"
+      />
+      <datalist id="squads" class="form__equipe_list">
+        <option value="Data Science">Data Science</option>
+        <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+      </datalist>
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
