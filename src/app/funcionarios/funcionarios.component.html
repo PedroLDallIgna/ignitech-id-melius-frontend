@@ -1,0 +1,21 @@
+<section class="funcionarios">
+  <div class="funcionarios__list">
+    <div class="funcionarios__list_header">
+      <p>Nome</p>
+      <p>Equipe</p>
+      <span></span>
+    </div>
+    <div class="funcionarios__list_items">
+      <div
+        *ngFor="let funcionario of funcionarios | async"
+        class="funcionarios__list_item"
+      >
+        <p class="funcionarios__list_item__nome">{{ funcionario.Nome }}</p>
+        <p class="funcionarios__list_item__equipe">{{ funcionario.Equipe }}</p>
+        <button class="funcionarios__list_item__edit">
+          <img src="https://via.placeholder.com/28x28" alt="" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
