@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormFuncionarioComponent } from './form-funcionario/form-funcionario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
+import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-d
     FuncionariosComponent,
     FormFuncionarioComponent,
     FuncionarioDetailsComponent,
+    FormEditFuncionarioComponent,
   ],
   imports: [
     BrowserModule,

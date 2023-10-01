@@ -27,4 +27,11 @@ export class FuncionariosService {
       `http://localhost:3000/api/funcionarios/${id}`
     );
   }
+
+  public updateFuncionario<T>(id: string, data: T) {
+    return this.http.patch(
+      `http://localhost:3000/api/funcionarios/${id}`,
+      data
+    );
+  }
 }
