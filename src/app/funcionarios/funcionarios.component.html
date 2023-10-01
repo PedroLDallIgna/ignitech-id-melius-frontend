@@ -13,9 +13,11 @@
         <p class="funcionarios__list_item__nome">{{ funcionario.Nome }}</p>
         <p class="funcionarios__list_item__equipe">{{ funcionario.Equipe }}</p>
         <div class="funcionarios__list_item__acoes">
-          <button class="funcionarios__list_item__acoes_edit">
-            <img src="https://via.placeholder.com/28x28" alt="" />
-          </button>
+          <a [routerLink]="[funcionario.Id_Funcionario, 'details']">
+            <button class="funcionarios__list_item__acoes_edit">
+              <img src="https://via.placeholder.com/28x28" alt="" />
+            </button>
+          </a>
           <button
             class="funcionarios__list_item__acoes_remove"
             (click)="removeFuncionario(funcionario.Id_Funcionario)"

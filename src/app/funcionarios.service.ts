@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Funcionario } from './funcionario';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,5 +20,11 @@ export class FuncionariosService {
 
   public deleteFuncionario(id: number) {
     return this.http.delete(`http://localhost:3000/api/funcionarios/${id}`);
+  }
+
+  public getFuncionarioById(id: string) {
+    return this.http.get<Funcionario>(
+      `http://localhost:3000/api/funcionarios/${id}`
+    );
   }
 }

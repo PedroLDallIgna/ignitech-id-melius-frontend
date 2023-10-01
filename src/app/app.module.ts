@@ -8,6 +8,7 @@ import { FuncionariosComponent } from './funcionarios/funcionarios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormFuncionarioComponent } from './form-funcionario/form-funcionario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     FuncionariosComponent,
     FormFuncionarioComponent,
+    FuncionarioDetailsComponent,
   ],
   imports: [
     BrowserModule,
