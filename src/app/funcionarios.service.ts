@@ -18,4 +18,8 @@ export class FuncionariosService {
   public postFuncionario<T>(data: T) {
     return this.http.post('http://localhost:3000/api/funcionarios', data);
   }
+
+  public deleteFuncionario(id: number) {
+    return this.http.delete(`http://localhost:3000/api/funcionarios/${id}`);
+  }
 }

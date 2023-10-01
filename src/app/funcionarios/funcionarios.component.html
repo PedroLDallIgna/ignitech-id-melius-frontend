@@ -3,7 +3,7 @@
     <div class="funcionarios__list_header">
       <p>Nome</p>
       <p>Equipe</p>
-      <span></span>
+      <p>Ações</p>
     </div>
     <div class="funcionarios__list_items">
       <div
@@ -12,10 +12,38 @@
       >
         <p class="funcionarios__list_item__nome">{{ funcionario.Nome }}</p>
         <p class="funcionarios__list_item__equipe">{{ funcionario.Equipe }}</p>
-        <button class="funcionarios__list_item__edit">
-          <img src="https://via.placeholder.com/28x28" alt="" />
-        </button>
+        <div class="funcionarios__list_item__acoes">
+          <button class="funcionarios__list_item__acoes_edit">
+            <img src="https://via.placeholder.com/28x28" alt="" />
+          </button>
+          <button
+            class="funcionarios__list_item__acoes_remove"
+            (click)="removeFuncionario(funcionario.Id_Funcionario)"
+          >
+            <img src="https://via.placeholder.com/28x28" alt="" />
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<div *ngIf="deleteModal" class="modal">
+  <div class="modal__content">
+    <p class="modal__text">Confirmar exclusão?</p>
+    <div class="modal__buttons">
+      <button
+        (click)="confirmaExclusao()"
+        class="modal__button modal__button_confirm"
+      >
+        Confirmar
+      </button>
+      <button
+        (click)="cancelaExclusao()"
+        class="modal__button modal__button_cancel"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
