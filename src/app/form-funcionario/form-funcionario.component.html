@@ -57,9 +57,30 @@
       <span>Equipe</span>
       <select class="form__select" formControlName="equipe">
         <option value="" selected>Nenhuma</option>
+        <option
+          *ngFor="let equipe of equipes | async"
+          [value]="equipe.Id_Equipe"
+        >
+          {{ equipe.Nome }}
+        </option>
       </select>
     </label>
 
-    <button type="submit">Enviar</button>
+    <div class="form__actions">
+      <a [routerLink]="['..']">
+        <button
+          type="button"
+          class="form__actions_button form__actions_button__back"
+        >
+          Voltar
+        </button>
+      </a>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__create"
+      >
+        Criar
+      </button>
+    </div>
   </form>
 </section>

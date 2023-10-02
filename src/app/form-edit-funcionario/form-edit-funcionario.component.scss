@@ -5,10 +5,14 @@
 }
 
 .form {
-  max-width: 700px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+  padding: 24px;
   margin: 0 auto;
 
   &__row {
@@ -78,6 +82,7 @@
         color: red;
 
         &:hover {
+          cursor: pointer;
           color: white;
           background-color: red;
         }
@@ -89,6 +94,7 @@
         color: green;
 
         &:hover {
+          cursor: pointer;
           color: white;
           background-color: green;
         }
@@ -104,6 +110,12 @@
   }
 
   &.ng-invalid {
+    border-color: red;
+  }
+}
+
+.ng-submitted {
+  .ng-invalid {
     border-color: red;
   }
 }

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FuncionariosService } from '../funcionarios.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-funcionario',
   templateUrl: './form-funcionario.component.html',
   styleUrls: ['./form-funcionario.component.scss'],
 })
-export class FormFuncionarioComponent {
+export class FormFuncionarioComponent implements OnInit {
   createFuncionarioForm = this.formBuilder.group(
     {
       nome: this.formBuilder.control(``, [Validators.required]),
@@ -34,12 +36,20 @@ export class FormFuncionarioComponent {
       updateOn: 'blur',
     }
   );
+  equipes!: Observable<{ Id_Equipe: number; Nome: string }[]>;
 
   constructor(
     private formBuilder: FormBuilder,
     private funcionariosService: FuncionariosService,
-    private router: Router
+    private router: Router,
+    private httpClient: HttpClient
   ) {}
+
+  ngOnInit(): void {
+    this.equipes = this.httpClient.get<{ Id_Equipe: number; Nome: string }[]>(
+      `http://localhost:3000/api/equipes`
+    );
+  }
 
   onSubmit() {
     if (this.createFuncionarioForm.valid) {

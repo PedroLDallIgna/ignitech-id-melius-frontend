@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FuncionariosService } from '../funcionarios.service';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-edit-funcionario',
@@ -36,14 +38,20 @@ export class FormEditFuncionarioComponent implements OnInit {
   );
   funcionarioId: string | undefined | null;
 
+  equipes!: Observable<{ Id_Equipe: number; Nome: string }[]>;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder,
-    private funcionarioService: FuncionariosService
+    private funcionarioService: FuncionariosService,
+    private httpClient: HttpClient
   ) {}
 
   ngOnInit(): void {
+    this.equipes = this.httpClient.get<{ Id_Equipe: number; Nome: string }[]>(
+      `http://localhost:3000/api/equipes`
+    );
     this.funcionarioId = this.route.snapshot.paramMap.get('id');
     if (this.funcionarioId)
       this.funcionarioService.getFuncionarioById(this.funcionarioId).subscribe({

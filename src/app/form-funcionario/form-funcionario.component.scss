@@ -5,11 +5,15 @@
 }
 
 .form {
-  max-width: 700px;
+  box-sizing: border-box;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
+  padding: 24px;
   margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
 
   &__row {
     display: grid;
@@ -56,6 +60,51 @@
       color: #000;
     }
   }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    &_button {
+      border: none;
+      background-color: transparent;
+      transition: all 0.2s ease;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 12px;
+
+      &__back {
+        width: 100%;
+        border: 1px solid black;
+        color: black;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 12px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          cursor: pointer;
+          background-color: black;
+          color: white;
+        }
+      }
+
+      &__create {
+        border: 1px solid blue;
+        border-radius: 5px;
+        color: blue;
+
+        &:hover {
+          cursor: pointer;
+          color: white;
+          background-color: blue;
+        }
+      }
+    }
+  }
 }
 
 .ng-touched {
@@ -65,6 +114,12 @@
   }
 
   &.ng-invalid {
+    border-color: red;
+  }
+}
+
+.ng-submitted {
+  .ng-invalid {
     border-color: red;
   }
 }
