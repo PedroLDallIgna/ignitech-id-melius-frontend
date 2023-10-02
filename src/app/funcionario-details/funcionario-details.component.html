@@ -1,0 +1,44 @@
+<section class="funcionario">
+  <div *ngIf="funcionario" class="funcionario__details">
+    <div class="funcionario__detail">
+      <p class="funcionario__detail_label">Nome</p>
+      <p class="funcionario__detail_value">{{ funcionario.Nome }}</p>
+    </div>
+    <div class="funcionario__detail">
+      <p class="funcionario__detail_label">Email</p>
+      <p class="funcionario__detail_value">{{ funcionario.Email }}</p>
+    </div>
+    <div class="funcionario__detail">
+      <p class="funcionario__detail_label">Data de Nascimento</p>
+      <p class="funcionario__detail_value">
+        {{ funcionario.DataNascimento | date : "dd/MM/yyyy" }}
+      </p>
+    </div>
+    <div class="funcionario__detail">
+      <p class="funcionario__detail_label">CPF</p>
+      <p class="funcionario__detail_value">{{ funcionario.CPF }}</p>
+    </div>
+    <div *ngIf="funcionario.Endereco" class="funcionario__detail">
+      <p class="funcionario__detail_label">Endereco</p>
+      <p class="funcionario__detail_value">{{ funcionario.Endereco }}</p>
+    </div>
+    <div *ngIf="funcionario.Telefone" class="funcionario__detail">
+      <p class="funcionario__detail_label">Telefone</p>
+      <p class="funcionario__detail_value">
+        {{ funcionario.Telefone }}
+      </p>
+    </div>
+    <div *ngIf="funcionario.Equipe" class="funcionario__detail">
+      <p class="funcionario__detail_label">Equipe</p>
+      <p class="funcionario__detail_value">{{ funcionario.Equipe }}</p>
+    </div>
+    <div class="funcionario__buttons">
+      <a routerLink="../../">
+        <button class="funcionario__button_back">Voltar</button>
+      </a>
+      <a [routerLink]="['..', 'edit']">
+        <button class="funcionario__button_edit">Editar</button>
+      </a>
+    </div>
+  </div>
+</section>

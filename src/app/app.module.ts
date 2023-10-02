@@ -3,16 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { FuncionariosComponent } from './funcionarios/funcionarios.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormFuncionarioComponent } from './form-funcionario/form-funcionario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
+import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    FuncionariosComponent,
+    FormFuncionarioComponent,
+    FuncionarioDetailsComponent,
+    FormEditFuncionarioComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

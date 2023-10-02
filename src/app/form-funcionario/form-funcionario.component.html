@@ -1,0 +1,86 @@
+<section class="form__section">
+  <form
+    class="form"
+    [formGroup]="createFuncionarioForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <label class="form__label">
+      <span>Nome*</span>
+      <input class="form__input" type="text" formControlName="nome" />
+    </label>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Email*</span>
+        <input class="form__input" type="email" formControlName="email" />
+      </label>
+      <label class="form__label">
+        <span>CPF*</span>
+        <input
+          class="form__input"
+          type="text"
+          inputmode="numeric"
+          formControlName="cpf"
+        />
+      </label>
+    </div>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Data de Nascimento*</span>
+        <input
+          class="form__input"
+          type="date"
+          formControlName="dataNascimento"
+        />
+      </label>
+      <label class="form__label">
+        <span>Sexo*</span>
+        <select class="form__select" formControlName="sexo">
+          <option value="F">Feminino</option>
+          <option value="M">Masculino</option>
+        </select>
+      </label>
+    </div>
+    <label class="form__label">
+      <span>Endereço</span>
+      <input class="form__input" type="text" formControlName="endereco" />
+    </label>
+    <label class="form__label">
+      <span>Telefone</span>
+      <input
+        class="form__input"
+        type="tel"
+        inputmode="numeric"
+        formControlName="telefone"
+      />
+    </label>
+    <label class="form__label">
+      <span>Equipe</span>
+      <select class="form__select" formControlName="equipe">
+        <option value="" selected>Nenhuma</option>
+        <option
+          *ngFor="let equipe of equipes | async"
+          [value]="equipe.Id_Equipe"
+        >
+          {{ equipe.Nome }}
+        </option>
+      </select>
+    </label>
+
+    <div class="form__actions">
+      <a [routerLink]="['..']">
+        <button
+          type="button"
+          class="form__actions_button form__actions_button__back"
+        >
+          Voltar
+        </button>
+      </a>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__create"
+      >
+        Criar
+      </button>
+    </div>
+  </form>
+</section>
