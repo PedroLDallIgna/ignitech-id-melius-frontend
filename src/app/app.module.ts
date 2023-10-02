@@ -13,6 +13,7 @@ import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-
 import { ClientesComponent } from './clientes/clientes.component';
 import { FormClienteComponent } from './form-cliente/form-cliente.component';
 import { ClienteDetailsComponent } from './cliente-details/cliente-details.component';
+import { FormEditClienteComponent } from './form-edit-cliente/form-edit-cliente.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ClienteDetailsComponent } from './cliente-details/cliente-details.compo
     ClientesComponent,
     FormClienteComponent,
     ClienteDetailsComponent,
+    FormEditClienteComponent,
   ],
   imports: [
     BrowserModule,
