@@ -1,0 +1,49 @@
+<section class="form__section">
+  <form class="form" [formGroup]="createClienteForm" (ngSubmit)="onSubmit()">
+    <label class="form__label">
+      <span>Nome*</span>
+      <input class="form__input" type="text" formControlName="nome" />
+    </label>
+    <div class="form__row">
+      <label class="form__label">
+        <span>CNPJ*</span>
+        <input
+          class="form__input"
+          type="text"
+          inputmode="numeric"
+          formControlName="cnpj"
+        />
+      </label>
+      <label class="form__label">
+        <span>Telefone</span>
+        <input
+          class="form__input"
+          type="tel"
+          inputmode="numeric"
+          formControlName="telefone"
+        />
+      </label>
+    </div>
+    <label class="form__label">
+      <span>Endereço</span>
+      <input class="form__input" type="text" formControlName="endereco" />
+    </label>
+
+    <div class="form__actions">
+      <a [routerLink]="['..']">
+        <button
+          type="button"
+          class="form__actions_button form__actions_button__back"
+        >
+          Voltar
+        </button>
+      </a>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__create"
+      >
+        Criar
+      </button>
+    </div>
+  </form>
+</section>

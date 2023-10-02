@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
 import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
 import { ClientesComponent } from './clientes/clientes.component';
+import { FormClienteComponent } from './form-cliente/form-cliente.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ClientesComponent } from './clientes/clientes.component';
     FuncionarioDetailsComponent,
     FormEditFuncionarioComponent,
     ClientesComponent,
+    FormClienteComponent,
   ],
   imports: [
     BrowserModule,
