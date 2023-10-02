@@ -70,9 +70,15 @@
           align-items: center;
           justify-content: center;
 
+          &_icon {
+            width: 25px;
+            height: 25px;
+          }
+
           &:hover {
             cursor: pointer;
           }
+
         }
 
         &_remove {
@@ -86,6 +92,11 @@
           display: flex;
           align-items: center;
           justify-content: center;
+
+          &_icon {
+            width: 25px;
+            height: 25px;
+          }
 
           &:hover {
             cursor: pointer;

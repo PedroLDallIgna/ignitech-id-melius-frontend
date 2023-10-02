@@ -15,14 +15,22 @@
         <div class="funcionarios__list_item__acoes">
           <a [routerLink]="[funcionario.Id_Funcionario, 'details']">
             <button class="funcionarios__list_item__acoes_edit">
-              <img src="https://via.placeholder.com/28x28" alt="" />
+              <img
+                class="funcionarios__list_item__acoes_edit_icon"
+                src="../../assets/user-search-alt-svgrepo-com.svg"
+                alt=""
+              />
             </button>
           </a>
           <button
             class="funcionarios__list_item__acoes_remove"
             (click)="removeFuncionario(funcionario.Id_Funcionario)"
           >
-            <img src="https://via.placeholder.com/28x28" alt="" />
+            <img
+              class="funcionarios__list_item__acoes_remove_icon"
+              src="../../assets/user-xmark-alt-svgrepo-com.svg"
+              alt=""
+            />
           </button>
         </div>
       </div>
