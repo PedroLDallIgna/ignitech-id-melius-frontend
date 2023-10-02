@@ -5,6 +5,7 @@ import { FuncionariosComponent } from './funcionarios/funcionarios.component';
 import { FormFuncionarioComponent } from './form-funcionario/form-funcionario.component';
 import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
 import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'funcionarios/:id/edit',
     component: FormEditFuncionarioComponent,
+  },
+  {
+    path: 'clientes',
+    component: ClientesComponent,
   },
   {
     path: '',
