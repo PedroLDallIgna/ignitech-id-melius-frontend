@@ -12,6 +12,7 @@ import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-d
 import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { FormClienteComponent } from './form-cliente/form-cliente.component';
+import { ClienteDetailsComponent } from './cliente-details/cliente-details.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormClienteComponent } from './form-cliente/form-cliente.component';
     FormEditFuncionarioComponent,
     ClientesComponent,
     FormClienteComponent,
+    ClienteDetailsComponent,
   ],
   imports: [
     BrowserModule,

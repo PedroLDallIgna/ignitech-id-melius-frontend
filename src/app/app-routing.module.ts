@@ -7,6 +7,7 @@ import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-d
 import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { FormClienteComponent } from './form-cliente/form-cliente.component';
+import { ClienteDetailsComponent } from './cliente-details/cliente-details.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'clientes/new',
     component: FormClienteComponent,
+  },
+  {
+    path: 'clientes/:id/details',
+    component: ClienteDetailsComponent,
   },
   {
     path: '',

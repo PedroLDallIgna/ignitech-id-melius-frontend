@@ -1,14 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-
-export interface Cliente {
-  Id_Cliente: number;
-  Nome: string;
-  CNPJ: string;
-  Telefone: string;
-  Endereco: string;
-}
+import { Cliente } from '../cliente';
 
 @Component({
   selector: 'app-clientes',

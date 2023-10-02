@@ -1,0 +1,30 @@
+<section class="cliente">
+  <div *ngIf="cliente" class="cliente__details">
+    <div class="cliente__detail">
+      <p class="cliente__detail_label">Nome</p>
+      <p class="cliente__detail_value">{{ cliente.Nome }}</p>
+    </div>
+    <div class="cliente__detail">
+      <p class="cliente__detail_label">CNPJ</p>
+      <p class="cliente__detail_value">{{ cliente.CNPJ }}</p>
+    </div>
+    <div *ngIf="cliente.Endereco" class="cliente__detail">
+      <p class="cliente__detail_label">Endereco</p>
+      <p class="cliente__detail_value">{{ cliente.Endereco }}</p>
+    </div>
+    <div *ngIf="cliente.Telefone" class="cliente__detail">
+      <p class="cliente__detail_label">Telefone</p>
+      <p class="cliente__detail_value">
+        {{ cliente.Telefone }}
+      </p>
+    </div>
+    <div class="cliente__buttons">
+      <a routerLink="../../">
+        <button class="cliente__button_back">Voltar</button>
+      </a>
+      <a [routerLink]="['..', 'edit']">
+        <button class="cliente__button_edit">Editar</button>
+      </a>
+    </div>
+  </div>
+</section>
