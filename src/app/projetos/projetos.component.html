@@ -1,0 +1,62 @@
+<section class="projetos">
+  <div class="projetos__list">
+    <div class="projetos__list_header">
+      <p>Nome</p>
+      <p>Cliente</p>
+      <p>Equipe</p>
+      <p>Data Entrega</p>
+      <p>Ações</p>
+    </div>
+    <div class="projetos__list_items">
+      <div *ngFor="let projeto of projetos | async" class="projetos__list_item">
+        <p class="projetos__list_item__nome">{{ projeto.Nome }}</p>
+        <p class="projetos__list_item__cliente">{{ projeto.Cliente }}</p>
+        <p class="projetos__list_item__equipe">{{ projeto.Equipe }}</p>
+        <p class="projetos__list_item__entregaPrevista">
+          {{ projeto.DataEntregaPrevista | date : "dd/MM/yyyy" }}
+        </p>
+        <div class="projetos__list_item__acoes">
+          <a [routerLink]="[projeto.Id_Projeto, 'details']">
+            <button class="projetos__list_item__acoes_edit">
+              <img
+                class="projetos__list_item__acoes_edit_icon"
+                src="../../assets/user-pen-alt-svgrepo-com.svg"
+                alt=""
+              />
+            </button>
+          </a>
+          <button
+            class="projetos__list_item__acoes_remove"
+            (click)="removeProjeto(projeto.Id_Projeto)"
+          >
+            <img
+              class="projetos__list_item__acoes_remove_icon"
+              src="../../assets/user-xmark-alt-svgrepo-com.svg"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="deleteModal" class="modal">
+  <div class="modal__content">
+    <p class="modal__text">Confirmar exclusão?</p>
+    <div class="modal__buttons">
+      <button
+        (click)="confirmaExclusao()"
+        class="modal__button modal__button_confirm"
+      >
+        Confirmar
+      </button>
+      <button
+        (click)="cancelaExclusao()"
+        class="modal__button modal__button_cancel"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
