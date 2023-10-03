@@ -98,6 +98,7 @@ export class FormEditProjetoComponent implements OnInit {
           this.editProjetoForm.get('dataEntregaPrevista')?.value || null,
         dataEntregaEfetiva:
           this.editProjetoForm.get('dataEntregaEfetiva')?.value || null,
+        estado: this.editProjetoForm.get('estado')?.value || 1,
       };
       this.httpClient
         .patch(`http://localhost:3000/api/projetos/${this.projetoId}`, data)
