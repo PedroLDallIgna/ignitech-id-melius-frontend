@@ -1,0 +1,74 @@
+.projeto {
+  width: 100%;
+  min-height: 100vh;
+  background-color: lightgray;
+
+  &__details {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 24px;
+    border-radius: 10px;
+  }
+
+  &__detail {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    &_label {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &_value {
+      font-size: 18px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__button {
+    &_back {
+      border: 1px solid black;
+      color: black;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 5px;
+      padding: 12px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
+    }
+
+    &_edit {
+      border: 1px solid blue;
+      color: blue;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 5px;
+      padding: 12px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+      }
+    }
+  }
+}

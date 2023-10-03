@@ -10,6 +10,7 @@ import { FormClienteComponent } from './form-cliente/form-cliente.component';
 import { ClienteDetailsComponent } from './cliente-details/cliente-details.component';
 import { FormEditClienteComponent } from './form-edit-cliente/form-edit-cliente.component';
 import { ProjetosComponent } from './projetos/projetos.component';
+import { ProjetoDetailsComponent } from './projeto-details/projeto-details.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'projetos',
     component: ProjetosComponent,
+  },
+  {
+    path: 'projetos/:id/details',
+    component: ProjetoDetailsComponent,
   },
   {
     path: '',

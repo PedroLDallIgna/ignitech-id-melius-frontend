@@ -1,0 +1,48 @@
+<section class="projeto">
+  <div *ngIf="projeto" class="projeto__details">
+    <div class="projeto__detail">
+      <p class="projeto__detail_label">Nome</p>
+      <p class="projeto__detail_value">{{ projeto.Nome }}</p>
+    </div>
+    <div class="projeto__detail">
+      <p class="projeto__detail_label">Cliente</p>
+      <p class="projeto__detail_value">{{ projeto.Cliente }}</p>
+    </div>
+    <div *ngIf="projeto.Descricao" class="projeto__detail">
+      <p class="projeto__detail_label">Descrição</p>
+      <p class="projeto__detail_value">{{ projeto.Descricao }}</p>
+    </div>
+    <div class="projeto__detail">
+      <p class="projeto__detail_label">Data Início</p>
+      <p class="projeto__detail_value">
+        {{ projeto.DataInicio | date : "dd/MM/yyyy" }}
+      </p>
+    </div>
+    <div *ngIf="projeto.DataEntregaPrevista" class="projeto__detail">
+      <p class="projeto__detail_label">Data de Entrega Prevista</p>
+      <p class="projeto__detail_value">
+        {{ projeto.DataEntregaPrevista | date : "dd/MM/yyyy" }}
+      </p>
+    </div>
+    <div *ngIf="projeto.DataEntregaEfetiva" class="projeto__detail">
+      <p class="projeto__detail_label">Data de Entrega Efetiva</p>
+      <p class="projeto__detail_value">
+        {{ projeto.DataEntregaEfetiva | date : "dd/MM/yyyy" }}
+      </p>
+    </div>
+    <div *ngIf="projeto.Equipe" class="projeto__detail">
+      <p class="projeto__detail_label">Equipe</p>
+      <p class="projeto__detail_value">
+        {{ projeto.Equipe }}
+      </p>
+    </div>
+    <div class="projeto__buttons">
+      <a routerLink="../../">
+        <button class="projeto__button_back">Voltar</button>
+      </a>
+      <a [routerLink]="['..', 'edit']">
+        <button class="projeto__button_edit">Editar</button>
+      </a>
+    </div>
+  </div>
+</section>

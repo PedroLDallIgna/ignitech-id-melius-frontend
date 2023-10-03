@@ -15,6 +15,7 @@ import { FormClienteComponent } from './form-cliente/form-cliente.component';
 import { ClienteDetailsComponent } from './cliente-details/cliente-details.component';
 import { FormEditClienteComponent } from './form-edit-cliente/form-edit-cliente.component';
 import { ProjetosComponent } from './projetos/projetos.component';
+import { ProjetoDetailsComponent } from './projeto-details/projeto-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProjetosComponent } from './projetos/projetos.component';
     ClienteDetailsComponent,
     FormEditClienteComponent,
     ProjetosComponent,
+    ProjetoDetailsComponent,
   ],
   imports: [
     BrowserModule,
