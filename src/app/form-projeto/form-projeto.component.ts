@@ -61,6 +61,7 @@ export class FormProjetoComponent implements OnInit {
           this.createProjetoForm.get('dataEntregaPrevista')?.value || null,
         dataEntregaEfetiva:
           this.createProjetoForm.get('dataEntregaEfetiva')?.value || null,
+        estado: 1,
       };
       this.httpClient
         .post(`http://localhost:3000/api/projetos`, data)

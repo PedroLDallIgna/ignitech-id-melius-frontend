@@ -5,6 +5,7 @@
       <p>Cliente</p>
       <p>Equipe</p>
       <p>Data Entrega</p>
+      <p>Status</p>
       <p>Ações</p>
     </div>
     <div class="projetos__list_items">
@@ -15,6 +16,7 @@
         <p class="projetos__list_item__entregaPrevista">
           {{ projeto.DataEntregaPrevista | date : "dd/MM/yyyy" }}
         </p>
+        <p class="projetos__list_item__status">{{ projeto.Estado }}</p>
         <div class="projetos__list_item__acoes">
           <a [routerLink]="[projeto.Id_Projeto, 'details']">
             <button class="projetos__list_item__acoes_edit">

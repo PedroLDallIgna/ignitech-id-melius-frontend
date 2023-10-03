@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Projeto } from '../projeto';
-import { formatDate } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -28,6 +27,9 @@ export class FormEditProjetoComponent implements OnInit {
       }),
       dataEntregaPrevista: this.formBuilder.control(''),
       dataEntregaEfetiva: this.formBuilder.control(''),
+      estado: this.formBuilder.control('', {
+        validators: [Validators.required],
+      }),
     },
     {
       updateOn: 'blur',
@@ -76,6 +78,7 @@ export class FormEditProjetoComponent implements OnInit {
                 ?.setValue(
                   new Date(data.DataEntregaEfetiva).toISOString().slice(0, 10)
                 );
+            this.editProjetoForm.get('estado')?.setValue(`${data.Estado}`);
           },
         });
     } else {
