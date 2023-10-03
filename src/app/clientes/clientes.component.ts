@@ -21,7 +21,7 @@ export class ClientesComponent implements OnInit {
     );
   }
 
-  removeFuncionario(id: number) {
+  removeCliente(id: number) {
     this.selectedCliente = id;
     this.toggleModal();
   }
