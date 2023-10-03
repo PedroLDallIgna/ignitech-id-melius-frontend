@@ -1,0 +1,40 @@
+<section class="tarefa">
+  <div *ngIf="tarefa" class="tarefa__details">
+    <div class="tarefa__detail">
+      <p class="tarefa__detail_label">Titulo</p>
+      <p class="tarefa__detail_value">{{ tarefa.Titulo }}</p>
+    </div>
+    <div class="tarefa__detail">
+      <p class="tarefa__detail_label">Projeto</p>
+      <p class="tarefa__detail_value">{{ tarefa.Projeto }}</p>
+    </div>
+    <div *ngIf="tarefa.Descricao" class="tarefa__detail">
+      <p class="tarefa__detail_label">Descrição</p>
+      <p class="tarefa__detail_value">{{ tarefa.Descricao }}</p>
+    </div>
+    <div *ngIf="tarefa.Funcionario" class="tarefa__detail">
+      <p class="tarefa__detail_label">Funcionario</p>
+      <p class="tarefa__detail_value">
+        {{ tarefa.Funcionario }}
+      </p>
+    </div>
+    <div *ngIf="tarefa.Estimativa" class="tarefa__detail">
+      <p class="tarefa__detail_label">Estimativa</p>
+      <p class="tarefa__detail_value">{{ tarefa.Estimativa }} horas</p>
+    </div>
+    <div class="tarefa__detail">
+      <p class="tarefa__detail_label">Status</p>
+      <p class="tarefa__detail_value">
+        {{ tarefa.Estado }}
+      </p>
+    </div>
+    <div class="tarefa__buttons">
+      <a routerLink="../../">
+        <button class="tarefa__button_back">Voltar</button>
+      </a>
+      <a [routerLink]="['..', 'edit']">
+        <button class="tarefa__button_edit">Editar</button>
+      </a>
+    </div>
+  </div>
+</section>

@@ -14,6 +14,7 @@ import { ProjetoDetailsComponent } from './projeto-details/projeto-details.compo
 import { FormEditProjetoComponent } from './form-edit-projeto/form-edit-projeto.component';
 import { FormProjetoComponent } from './form-projeto/form-projeto.component';
 import { TarefasComponent } from './tarefas/tarefas.component';
+import { TarefaDetailsComponent } from './tarefa-details/tarefa-details.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'tarefas',
     component: TarefasComponent,
+  },
+  {
+    path: 'tarefas/:id/details',
+    component: TarefaDetailsComponent,
   },
   {
     path: '',
