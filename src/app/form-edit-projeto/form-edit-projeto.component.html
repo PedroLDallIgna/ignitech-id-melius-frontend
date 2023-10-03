@@ -1,0 +1,72 @@
+<section class="form__section">
+  <form class="form" [formGroup]="editProjetoForm" (ngSubmit)="onSubmit()">
+    <label class="form__label">
+      <span>Nome*</span>
+      <input class="form__input" type="text" formControlName="nome" />
+    </label>
+    <label class="form__label">
+      <span>Descricao</span>
+      <input class="form__input" type="text" formControlName="descricao" />
+    </label>
+    <label class="form__label">
+      <span>Data de Inicio*</span>
+      <input class="form__input" type="date" formControlName="dataInicio" />
+    </label>
+    <label class="form__label">
+      <span>Data de Entrega (Prevista)</span>
+      <input
+        class="form__input"
+        type="date"
+        formControlName="dataEntregaPrevista"
+      />
+    </label>
+    <label class="form__label">
+      <span>Data de Entrega (Efetiva)</span>
+      <input
+        class="form__input"
+        type="date"
+        formControlName="dataEntregaEfetiva"
+      />
+    </label>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Cliente*</span>
+        <input
+          class="form__input"
+          type="tel"
+          inputmode="numeric"
+          formControlName="cliente"
+        />
+      </label>
+      <label class="form__label">
+        <span>Equipe</span>
+        <select class="form__select" formControlName="equipe">
+          <option value="" [selected]="!equipeId">Nenhuma</option>
+          <option
+            *ngFor="let equipe of equipes | async"
+            [value]="equipe.Id_Equipe"
+            [selected]="equipeId === equipe.Id_Equipe"
+          >
+            {{ equipe.Nome }}
+          </option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form__actions">
+      <button
+        type="button"
+        class="form__actions_button form__actions_button__cancel"
+        (click)="handleCancel()"
+      >
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__save"
+      >
+        Salvar
+      </button>
+    </div>
+  </form>
+</section>
