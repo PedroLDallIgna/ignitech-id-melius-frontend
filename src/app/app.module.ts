@@ -10,6 +10,10 @@ import { FormFuncionarioComponent } from './form-funcionario/form-funcionario.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
 import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-funcionario.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { FormClienteComponent } from './form-cliente/form-cliente.component';
+import { ClienteDetailsComponent } from './cliente-details/cliente-details.component';
+import { FormEditClienteComponent } from './form-edit-cliente/form-edit-cliente.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { FormEditFuncionarioComponent } from './form-edit-funcionario/form-edit-
     FormFuncionarioComponent,
     FuncionarioDetailsComponent,
     FormEditFuncionarioComponent,
+    ClientesComponent,
+    FormClienteComponent,
+    ClienteDetailsComponent,
+    FormEditClienteComponent,
   ],
   imports: [
     BrowserModule,
