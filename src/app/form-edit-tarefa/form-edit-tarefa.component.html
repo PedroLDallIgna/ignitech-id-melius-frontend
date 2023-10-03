@@ -1,0 +1,82 @@
+<section class="form__section">
+  <form class="form" [formGroup]="editTarefaForm" (ngSubmit)="onSubmit()">
+    <label class="form__label">
+      <span>Titulo*</span>
+      <input class="form__input" type="text" formControlName="titulo" />
+    </label>
+    <label class="form__label">
+      <span>Descricao</span>
+      <input class="form__input" type="text" formControlName="descricao" />
+    </label>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Projeto*</span>
+        <select class="form__select" formControlName="projeto">
+          <option
+            *ngFor="let projeto of projetos | async"
+            [value]="projeto.Id_Projeto"
+          >
+            {{ projeto.Nome }}
+          </option>
+        </select>
+      </label>
+      <label class="form__label">
+        <span>Funcionario</span>
+        <select class="form__select" formControlName="funcionario">
+          <option value="" selected>Nenhum</option>
+          <option
+            *ngFor="let funcionario of funcionarios | async"
+            [value]="funcionario.Id_Funcionario"
+          >
+            {{ funcionario.Nome }}
+          </option>
+        </select>
+      </label>
+    </div>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Estimativa</span>
+        <input class="form__input" type="number" formControlName="estimativa" />
+      </label>
+      <label class="form__label">
+        <span>Status</span>
+        <select class="form__select" formControlName="estado">
+          <option
+            value="1"
+            [selected]="editTarefaForm.get('estado')?.value == '1'"
+          >
+            À Fazer
+          </option>
+          <option
+            value="2"
+            [selected]="editTarefaForm.get('estado')?.value == '2'"
+          >
+            Em andamento
+          </option>
+          <option
+            value="3"
+            [selected]="editTarefaForm.get('estado')?.value == '3'"
+          >
+            Feito
+          </option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form__actions">
+      <button
+        type="button"
+        class="form__actions_button form__actions_button__cancel"
+        (click)="handleCancel()"
+      >
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__save"
+      >
+        Salvar
+      </button>
+    </div>
+  </form>
+</section>
