@@ -1,0 +1,58 @@
+<section class="form__section">
+  <form class="form" [formGroup]="createTarefaForm" (ngSubmit)="onSubmit()">
+    <label class="form__label">
+      <span>Titulo*</span>
+      <input class="form__input" type="text" formControlName="titulo" />
+    </label>
+    <label class="form__label">
+      <span>Descricao</span>
+      <input class="form__input" type="text" formControlName="descricao" />
+    </label>
+    <div class="form__row">
+      <label class="form__label">
+        <span>Projeto*</span>
+        <select class="form__select" formControlName="projeto">
+          <option
+            *ngFor="let projeto of projetos | async"
+            [value]="projeto.Id_Projeto"
+          >
+            {{ projeto.Nome }}
+          </option>
+        </select>
+      </label>
+      <label class="form__label">
+        <span>Funcionario</span>
+        <select class="form__select" formControlName="funcionario">
+          <option value="" selected>Nenhum</option>
+          <option
+            *ngFor="let funcionario of funcionarios | async"
+            [value]="funcionario.Id_Funcionario"
+          >
+            {{ funcionario.Nome }}
+          </option>
+        </select>
+      </label>
+    </div>
+    <label class="form__label">
+      <span>Estimativa</span>
+      <input class="form__input" type="number" formControlName="estimativa" />
+    </label>
+
+    <div class="form__actions">
+      <a [routerLink]="['..']">
+        <button
+          type="button"
+          class="form__actions_button form__actions_button__back"
+        >
+          Voltar
+        </button>
+      </a>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__create"
+      >
+        Criar
+      </button>
+    </div>
+  </form>
+</section>

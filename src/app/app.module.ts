@@ -20,6 +20,7 @@ import { FormEditProjetoComponent } from './form-edit-projeto/form-edit-projeto.
 import { FormProjetoComponent } from './form-projeto/form-projeto.component';
 import { TarefasComponent } from './tarefas/tarefas.component';
 import { TarefaDetailsComponent } from './tarefa-details/tarefa-details.component';
+import { FormTarefaComponent } from './form-tarefa/form-tarefa.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { TarefaDetailsComponent } from './tarefa-details/tarefa-details.componen
     FormProjetoComponent,
     TarefasComponent,
     TarefaDetailsComponent,
+    FormTarefaComponent,
   ],
   imports: [
     BrowserModule,
