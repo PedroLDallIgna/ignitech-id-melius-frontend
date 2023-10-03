@@ -12,6 +12,7 @@ import { FormEditClienteComponent } from './form-edit-cliente/form-edit-cliente.
 import { ProjetosComponent } from './projetos/projetos.component';
 import { ProjetoDetailsComponent } from './projeto-details/projeto-details.component';
 import { FormEditProjetoComponent } from './form-edit-projeto/form-edit-projeto.component';
+import { FormProjetoComponent } from './form-projeto/form-projeto.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'projetos',
     component: ProjetosComponent,
+  },
+  {
+    path: 'projetos/new',
+    component: FormProjetoComponent,
   },
   {
     path: 'projetos/:id/details',
