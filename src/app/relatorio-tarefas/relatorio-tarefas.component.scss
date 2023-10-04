@@ -24,13 +24,13 @@
   &__resultado {
     &_header {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr) auto;
       border-bottom: 1px solid gray;
       padding-bottom: 8px;
     }
     &_item {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr) auto;
       padding: 12px 0;
     }
   }

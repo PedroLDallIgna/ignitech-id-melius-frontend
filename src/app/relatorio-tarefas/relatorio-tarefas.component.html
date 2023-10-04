@@ -46,12 +46,14 @@
         <span>Funcionario</span>
         <span>Projeto</span>
         <span>Status</span>
+        <span></span>
       </div>
       <div *ngFor="let tarefa of tarefas | async" class="relatorio__resultado_item">
         <span>{{tarefa.Tarefa}}</span>
         <span>{{tarefa.Funcionario}}</span>
         <span>{{tarefa.Projeto}}</span>
         <span>{{tarefa.Status}}</span>
+        <a [routerLink]="['..', tarefa.Id_Tarefa, 'details']">Ver</a>
       </div>
     </div>
 

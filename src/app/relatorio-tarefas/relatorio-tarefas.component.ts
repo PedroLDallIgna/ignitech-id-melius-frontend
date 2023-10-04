@@ -12,7 +12,7 @@ import { Tarefa } from '../tarefa';
   styleUrls: ['./relatorio-tarefas.component.scss']
 })
 export class RelatorioTarefasComponent implements OnInit {
-  tarefas!: Observable<{Tarefa: string, Id_Funcionario: number, Funcionario: string, Id_Projeto: number, Projeto: string, Id_Estado: number, Status: String, Estimativa: number}[]>
+  tarefas!: Observable<{Id_Tarefa: number, Tarefa: string, Id_Funcionario: number, Funcionario: string, Id_Projeto: number, Projeto: string, Id_Estado: number, Status: String, Estimativa: number}[]>
   funcionarios!: Observable<Funcionario[]>;
   projetos!: Observable<Projeto[]>;
 
@@ -42,7 +42,7 @@ export class RelatorioTarefasComponent implements OnInit {
     }
 
     if (params.toString().length > 0) {
-      this.tarefas = this.httpClient.get<{Tarefa: string, Id_Funcionario: number, Funcionario: string, Id_Projeto: number, Projeto: string, Id_Estado: number, Status: String, Estimativa: number}[]>(`http://localhost:3000/api/tarefas?${params.toString()}`);
+      this.tarefas = this.httpClient.get<{Id_Tarefa: number, Tarefa: string, Id_Funcionario: number, Funcionario: string, Id_Projeto: number, Projeto: string, Id_Estado: number, Status: String, Estimativa: number}[]>(`http://localhost:3000/api/tarefas?${params.toString()}`);
     }
   }
 }
