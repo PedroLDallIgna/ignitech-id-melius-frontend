@@ -1,0 +1,15 @@
+.home {
+  height: calc(100vh - 72px - 24px);
+  background-color: lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
