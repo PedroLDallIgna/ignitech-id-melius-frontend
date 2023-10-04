@@ -1,45 +1,59 @@
-<form [formGroup]="queryForm" (ngSubmit)="onSubmit()">
-  <label>
-    <span>Projeto</span>
-    <select formControlName="projeto">
-      <option value="">Qualquer</option>
-      <option *ngFor="let projeto of projetos | async" [value]="projeto.Id_Projeto">{{projeto.Nome}}</option>
-    </select>
-  </label>
-  <label>
-    <span>Funcionario</span>
-    <select formControlName="funcionario">
-      <option value="">Qualquer</option>
-      <option *ngFor="let funcionario of funcionarios | async" [value]="funcionario.Id_Funcionario">{{funcionario.Nome}}</option>
-    </select>
-  </label>
-  <label class="form__label">
-    <span>Status</span>
-    <select formControlName="estado">
-      <option value="" selected>Qualquer</option>
-      <option
-        value="1"
-      >
-        À Fazer
-      </option>
-      <option
-        value="2"
-      >
-        Em andamento
-      </option>
-      <option
-        value="3"
-      >
-        Feito
-      </option>
-    </select>
-  </label>
+<section class="relatorio">
+  <div class="relatorio__container">
+    <form class="relatorio__filter" [formGroup]="queryForm" (ngSubmit)="onSubmit()">
+      <label>
+        <span>Projeto</span>
+        <select formControlName="projeto">
+          <option value="">Qualquer</option>
+          <option *ngFor="let projeto of projetos | async" [value]="projeto.Id_Projeto">{{projeto.Nome}}</option>
+        </select>
+      </label>
+      <label>
+        <span>Funcionario</span>
+        <select formControlName="funcionario">
+          <option value="">Qualquer</option>
+          <option *ngFor="let funcionario of funcionarios | async" [value]="funcionario.Id_Funcionario">{{funcionario.Nome}}</option>
+        </select>
+      </label>
+      <label class="form__label">
+        <span>Status</span>
+        <select formControlName="estado">
+          <option value="" selected>Qualquer</option>
+          <option
+            value="1"
+          >
+            À Fazer
+          </option>
+          <option
+            value="2"
+          >
+            Em andamento
+          </option>
+          <option
+            value="3"
+          >
+            Feito
+          </option>
+        </select>
+      </label>
 
-  <button type="submit">Pesquisar</button>
-</form>
+      <button type="submit">Filtrar</button>
+    </form>
 
-<div class="resultado">
-  <div *ngFor="let tarefa of tarefas | async">
-    {{tarefa.Tarefa}}
+    <div class="relatorio__resultado">
+      <div class="relatorio__resultado_header">
+        <span>Tarefa</span>
+        <span>Funcionario</span>
+        <span>Projeto</span>
+        <span>Status</span>
+      </div>
+      <div *ngFor="let tarefa of tarefas | async" class="relatorio__resultado_item">
+        <span>{{tarefa.Tarefa}}</span>
+        <span>{{tarefa.Funcionario}}</span>
+        <span>{{tarefa.Projeto}}</span>
+        <span>{{tarefa.Status}}</span>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>

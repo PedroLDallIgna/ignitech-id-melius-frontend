@@ -1,0 +1,37 @@
+.relatorio {
+  width: 100%;
+  min-height: 100vh;
+  background-color: lightgray;
+
+  &__container {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 24px;
+    border-radius: 10px;
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__resultado {
+    &_header {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid gray;
+      padding-bottom: 8px;
+    }
+    &_item {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 12px 0;
+    }
+  }
+}
