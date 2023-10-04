@@ -20,6 +20,7 @@ import { FormEditTarefaComponent } from './form-edit-tarefa/form-edit-tarefa.com
 import { EquipesComponent } from './equipes/equipes.component';
 import { FormEquipeComponent } from './form-equipe/form-equipe.component';
 import { EquipeDetailsComponent } from './equipe-details/equipe-details.component';
+import { FormEditEquipeComponent } from './form-edit-equipe/form-edit-equipe.component';
 
 const routes: Routes = [
   {
@@ -101,6 +102,10 @@ const routes: Routes = [
   {
     path: 'equipes/:id/details',
     component: EquipeDetailsComponent,
+  },
+  {
+    path: 'equipes/:id/edit',
+    component: FormEditEquipeComponent,
   },
   {
     path: '',

@@ -1,0 +1,42 @@
+<section class="form__section">
+  <form class="form" [formGroup]="editEquipeForm" (ngSubmit)="onSubmit()">
+    <label class="form__label">
+      <span>Nome*</span>
+      <input class="form__input" type="text" formControlName="nome" />
+    </label>
+    <label class="form__label">
+      <span>Área*</span>
+      <input
+        class="form__input"
+        list="areas"
+        type="text"
+        formControlName="area"
+      />
+      <datalist id="areas">
+        <option *ngFor="let area of areas | async" [value]="area.Nome">
+          {{ area.Nome }}
+        </option>
+      </datalist>
+    </label>
+    <label class="form__label">
+      <span>Descricao</span>
+      <input class="form__input" type="text" formControlName="descricao" />
+    </label>
+
+    <div class="form__actions">
+      <button
+        type="button"
+        class="form__actions_button form__actions_button__cancel"
+        (click)="handleCancel()"
+      >
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        class="form__actions_button form__actions_button__save"
+      >
+        Salvar
+      </button>
+    </div>
+  </form>
+</section>
