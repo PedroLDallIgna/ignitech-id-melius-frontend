@@ -22,6 +22,7 @@ import { TarefasComponent } from './tarefas/tarefas.component';
 import { TarefaDetailsComponent } from './tarefa-details/tarefa-details.component';
 import { FormTarefaComponent } from './form-tarefa/form-tarefa.component';
 import { FormEditTarefaComponent } from './form-edit-tarefa/form-edit-tarefa.component';
+import { EquipesComponent } from './equipes/equipes.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FormEditTarefaComponent } from './form-edit-tarefa/form-edit-tarefa.com
     TarefaDetailsComponent,
     FormTarefaComponent,
     FormEditTarefaComponent,
+    EquipesComponent,
   ],
   imports: [
     BrowserModule,

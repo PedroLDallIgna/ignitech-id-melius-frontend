@@ -1,0 +1,56 @@
+<section class="equipes">
+  <div class="equipes__list">
+    <div class="equipes__list_header">
+      <p>Titulo</p>
+      <p>Área</p>
+      <p>Ações</p>
+    </div>
+    <div class="equipes__list_items">
+      <div *ngFor="let equipe of equipes | async" class="equipes__list_item">
+        <p class="equipes__list_item__titulo">{{ equipe.Nome }}</p>
+        <p class="equipes__list_item__projeto">{{ equipe.Area }}</p>
+        <div class="equipes__list_item__acoes">
+          <a [routerLink]="[equipe.Id_Equipe, 'details']">
+            <button class="equipes__list_item__acoes_edit">
+              <img
+                class="equipes__list_item__acoes_edit_icon"
+                src="../../assets/user-pen-alt-svgrepo-com.svg"
+                alt=""
+              />
+            </button>
+          </a>
+          <button
+            class="equipes__list_item__acoes_remove"
+            (click)="removeEquipe(equipe.Id_Equipe)"
+          >
+            <img
+              class="equipes__list_item__acoes_remove_icon"
+              src="../../assets/user-xmark-alt-svgrepo-com.svg"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="deleteModal" class="modal">
+  <div class="modal__content">
+    <p class="modal__text">Confirmar exclusão?</p>
+    <div class="modal__buttons">
+      <button
+        (click)="confirmaExclusao()"
+        class="modal__button modal__button_confirm"
+      >
+        Confirmar
+      </button>
+      <button
+        (click)="cancelaExclusao()"
+        class="modal__button modal__button_cancel"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
