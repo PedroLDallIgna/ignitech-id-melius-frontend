@@ -1,0 +1,24 @@
+<section class="equipe">
+  <div *ngIf="equipe" class="equipe__details">
+    <div class="equipe__detail">
+      <p class="equipe__detail_label">Nome</p>
+      <p class="equipe__detail_value">{{ equipe.Nome }}</p>
+    </div>
+    <div class="equipe__detail">
+      <p class="equipe__detail_label">Área</p>
+      <p class="equipe__detail_value">{{ equipe.Area }}</p>
+    </div>
+    <div *ngIf="equipe.Descricao" class="equipe__detail">
+      <p class="equipe__detail_label">Descrição</p>
+      <p class="equipe__detail_value">{{ equipe.Descricao }}</p>
+    </div>
+    <div class="equipe__buttons">
+      <a routerLink="../../">
+        <button class="equipe__button_back">Voltar</button>
+      </a>
+      <a [routerLink]="['..', 'edit']">
+        <button class="equipe__button_edit">Editar</button>
+      </a>
+    </div>
+  </div>
+</section>
