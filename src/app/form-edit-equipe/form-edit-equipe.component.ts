@@ -64,7 +64,7 @@ export class FormEditEquipeComponent implements OnInit {
         area: this.editEquipeForm.get('area')?.value,
       };
       this.httpClient
-        .patch('http://localhost:3000/api/equipes', data)
+        .patch(`http://localhost:3000/api/equipes/${this.equipeId}`, data)
         .subscribe({
           next: () => this.router.navigate(['equipes']),
         });
