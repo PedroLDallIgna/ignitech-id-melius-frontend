@@ -21,6 +21,7 @@ import { EquipesComponent } from './equipes/equipes.component';
 import { FormEquipeComponent } from './form-equipe/form-equipe.component';
 import { EquipeDetailsComponent } from './equipe-details/equipe-details.component';
 import { FormEditEquipeComponent } from './form-edit-equipe/form-edit-equipe.component';
+import { RelatorioTarefasComponent } from './relatorio-tarefas/relatorio-tarefas.component';
 
 const routes: Routes = [
   {
@@ -90,6 +91,10 @@ const routes: Routes = [
   {
     path: 'tarefas/:id/edit',
     component: FormEditTarefaComponent,
+  },
+  {
+    path: 'tarefas/relatorio',
+    component: RelatorioTarefasComponent,
   },
   {
     path: 'equipes',

@@ -27,6 +27,7 @@ import { FormEquipeComponent } from './form-equipe/form-equipe.component';
 import { EquipeDetailsComponent } from './equipe-details/equipe-details.component';
 import { FormEditEquipeComponent } from './form-edit-equipe/form-edit-equipe.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RelatorioTarefasComponent } from './relatorio-tarefas/relatorio-tarefas.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormEquipeComponent,
     EquipeDetailsComponent,
     FormEditEquipeComponent,
-    NavbarComponent
+    NavbarComponent,
+    RelatorioTarefasComponent
   ],
   imports: [
     BrowserModule,
