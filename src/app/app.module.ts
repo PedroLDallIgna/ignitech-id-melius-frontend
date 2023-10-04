@@ -26,6 +26,7 @@ import { EquipesComponent } from './equipes/equipes.component';
 import { FormEquipeComponent } from './form-equipe/form-equipe.component';
 import { EquipeDetailsComponent } from './equipe-details/equipe-details.component';
 import { FormEditEquipeComponent } from './form-edit-equipe/form-edit-equipe.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FormEditEquipeComponent } from './form-edit-equipe/form-edit-equipe.com
     FormEquipeComponent,
     EquipeDetailsComponent,
     FormEditEquipeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
